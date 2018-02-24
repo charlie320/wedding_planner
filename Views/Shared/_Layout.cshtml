@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WeddingPlanner</title>
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <header>
+        <img src="/images/beatriz-perez-moya-513499-800x150.jpg" alt="Flowers and Ring">
+        <div class="header-text-top">Wedding</div>
+        <div class="header-text-bottom">Planner</div>
+    </header>
+    <nav>
+        @{
+            if (@ViewBag.InitSession == null) {
+                <a href="/registerform" id="register-link">Register</a>
+                <a href="/index">Login</a>
+            } else {
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout" id="logout-link">Logout</a>
+            }
+        }
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer>
+        <p>Created as a class project by Jesus C. de la Rosa with C#, ASP.NET Core and PostgreSQL</p>
+        <p>For demonstration purposes only.</p>
+        <p>Images courtesy of Unsplash.com and Tom Kulczycki, Beatriz Perez-Moya, and Anne Edgar.</p>
+        <p>Please visit my website at <a href="http://charliedelarosa.com" target="_blank">charliedelarosa.com</a></p>
+    </footer>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

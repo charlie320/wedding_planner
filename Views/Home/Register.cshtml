@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="~/css/register.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+
+@model WeddingPlanner.Models.RegisterViewModel
+
+<div id="container">
+    <div class="row">
+        <h1 id="register-h1"><em>Register</em></h1>
+        <div class="col col-left">
+
+            <a href="index" id="already-registered">Already registered?</a>
+
+            <form id="register-form" action="Register" method="POST">
+                <div class="col">
+
+                    <div class="input-div">
+                        <label asp-for="FirstName" class="input-label">First Name:</label>
+                        <input asp-for="FirstName" class="form-input" id="first-name" placeholder="First Name">
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="LastName" class="input-label">Last Name:</label>
+                        <input asp-for="LastName" class="form-input" id="last-name" placeholder="Last Name">
+                        <span asp-validation-for="LastName"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="Email" class="input-label">Email Address:</label>
+                        <input asp-for="Email" class="form-input" id="email-address" placeholder="Email Address">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="Password" class="input-label">Password:</label>
+                        <input asp-for="Password" type="password" class="form-input" id="password" placeholder="Password">
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="PasswordConfirmation" class="input-label">Confirm Password:</label>
+                        <input asp-for="PasswordConfirmation" type="password" class="form-input" id="confirm-password" placeholder="Confirm Password">
+                        <span asp-validation-for="PasswordConfirmation"></span>
+                    </div>
+                    <div>
+                    <input type="submit" value="Submit">
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <div class="col col-right">
+            <img class="col-right" src="/images/anne-edgar-119383-400x300-pink-vignette.jpg" alt="Wedding Couple">
+        </div>
+
+    </div>
+
+    <div>
+        @Html.ValidationSummary()
+    </div>
+
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+

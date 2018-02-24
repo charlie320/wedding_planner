@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/index.css">
+
+@model WeddingPlanner.Models.User
+
+<div id="upper-border"></div>
+
+<div id="login-container">
+    <div class="login-row">
+        <div class="login-col login-col-left">
+            <h1 id="login-h1"><em>Login</em></h1>
+            <a href="registerform" class="login-col-a">Need to register?</a>
+            <form action="Login" method="POST">
+                <div class="input-div">
+                    <label asp-for="Email" class="input-label">Email Address:</label>
+                    <input asp-for="Email" class="form-input" placeholder="Email Address" name="Email">
+                </div>
+                <div class="input-div">
+                    <label asp-for="Password" class="input-label">Password:</label>
+                    <input asp-for="Password" type="password" class="form-input" placeholder="Password" name="Password">
+                </div>
+                <div id="error-div">
+                    @ViewBag.error
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="login-col">
+            <img class="login-col" src="/images/tom-kulczycki-415112-400x300.jpg"/>
+        </div>
+    </div>
+</div>
+
+<div id="lower-border"></div>
+
+
+

@@ -1,0 +1,57 @@
+<linK rel="stylesheet" href="~/css/dashboard.css">
+
+@model WeddingPlanner.Models.Wedding
+@using WeddingPlanner.Models;
+
+<div id="container">
+    <h1 class="title">Welcome @ViewBag.currentUser.FirstName</h1>
+    <h2 class="title">Upcoming Weddings</h2>
+    <table>
+        <tr>
+            <th>
+                Wedding
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Guests
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        @{
+            foreach (Wedding wedding in @ViewBag.allWeddings) {
+                    <tr>
+                        <td>
+                            <a href="/wedding/@wedding.WeddingId" id="a-couple"><em>@wedding.WedderOne &amp; @wedding.WedderTwo</em></a>
+                        </td>
+                        <td>
+                            @wedding.Date.ToString("MMM d, yyyy")
+                        </td>
+                        <td>
+                            @wedding.GuestsAttending.Count
+                        </td>
+                        <td class="action-link">
+                            @if (@ViewBag.currentUser.UserId == wedding.PlannerId) {
+                                <a href="delete/@wedding.WeddingId" id="action-link-delete">Delete</a>
+                            } else if (wedding.GuestsAttending.Where(g => g.GuestId == @ViewBag.currentUser.UserId).SingleOrDefault() == null) {
+                                <form action="CreateConfirmation" method="POST">
+                                    <input type="hidden" name="weddingId" value=@wedding.WeddingId>
+                                    <input type="submit" value="RSVP" id="action-link-submit">
+                                </form>
+                            } else {
+                                <a href="cancel/@wedding.WeddingId" id="action-link-cancel">Cancel</a>
+                            }
+                        </td>
+                    </tr>
+            }
+        }
+
+    </table>
+    <p id="more-info">Click on a couple for more info!</p>
+
+    <a href="newwedding" id="a-newwedding">New Wedding</a>
+</div>

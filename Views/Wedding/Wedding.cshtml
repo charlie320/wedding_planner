@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Wedding Page";
+}
+
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+@model WeddingPlanner.Models.Wedding
+@using WeddingPlanner.Models;
+
+<link rel="stylesheet" href="~/css/wedding.css">
+
+<div class="row">
+    <div class="col col-left">
+        <h1>@ViewBag.wedding.WedderOne &amp; @ViewBag.wedding.WedderTwo&#39;s Wedding</h1>
+        <h2>Date: @ViewBag.wedding.Date.ToString("MMMM d, yyyy")</h2>
+        <h2>Location: @ViewBag.wedding.WeddingAddress</h2>
+        <div id="guests-div">
+            <h2>Guests:</h2>
+            @{
+                foreach (var wedding in @ViewBag.wedding.GuestsAttending) {
+                    <p>@wedding.Guest.FirstName @wedding.Guest.LastName</p>
+                }
+            }
+        </div>
+    </div>
+
+
+    <div class="col col-right">
+        <div id="googleMap"></div>
+    </div>
+
+    <div id="demo"></div>
+</div>
+
+<script type="text/javascript">
+    var wedding_lat = '@ViewBag.wedding.Latitude';
+    var wedding_lng = '@ViewBag.wedding.Longitude';
+    function myMap()
+    {
+ 
+    // myCenter=new google.maps.LatLng(32.9029, -96.5639);
+    myCenter=new google.maps.LatLng(wedding_lat, wedding_lng);
+    var mapOptions= {
+        center:myCenter,
+        zoom:12, scrollwheel: false, draggable: false,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myCenter,
+     });
+
+    marker.setMap(map);
+    }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8nT4t5PPhWqjyRpWOHyXFCh5LAdvsavY&callback=myMap"></script>

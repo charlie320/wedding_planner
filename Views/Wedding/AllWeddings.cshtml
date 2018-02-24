@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="~/css/allweddings.css">
+
+<h1>All Weddings Page</h1>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>WedderOne</th>
+        <th>WedderTwo</th>
+        <th>Date</th>
+        <th>WeddingAddress</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>PlannerId</th>        
+        <th>created_at</th>
+        <th>updated_at</th>
+        <th>GuestsAttending</th>
+    </tr>
+    @{
+        foreach (var wedding in @ViewBag.allWeddings) {
+            <tr>
+                <td>@wedding.WeddingId</td>
+                <td>@wedding.WedderOne</td>
+                <td>@wedding.WedderTwo</td>
+                <td>@wedding.Date</td>
+                <td>@wedding.WeddingAddress</td> 
+                <td>@wedding.Latitude</td>
+                <td>@wedding.Longitude</td>               
+                <td>@wedding.PlannerId</td>
+                <td>@wedding.created_at</td>
+                <td>@wedding.updated_at</td>
+                <td>@wedding.GuestsAttending</td>
+            </tr>
+        }
+    }
+
+</table>

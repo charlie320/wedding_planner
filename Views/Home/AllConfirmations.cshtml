@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="~/css/allweddings.css">
+
+<h1>All Confirmations Page</h1>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Guest ID</th>
+        <th>Wedding ID</th>
+    </tr>
+    @{
+        foreach (var confirm in @ViewBag.allConfirmations) {
+            <tr>
+                <td>@confirm.ConfirmationId</td>
+                <td>@confirm.GuestId</td>
+                <td>@confirm.WeddingId</td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="~/css/newwedding.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+
+@model WeddingPlanner.Models.Wedding
+
+<div id="container">
+    <div class="row">
+        <h1 class="title"><em>Plan Your Wedding</em></h1>
+        <div class="col col-left">
+            <form id="register-form" action="CreateWedding" method="POST">
+                    <div class="input-div">
+                        <label asp-for="WedderOne" class="input-label">Wedder One:</label>
+                        <input asp-for="WedderOne" class="form-input" id="wedder-one" placeholder="Wedder One">
+                        <span asp-validation-for="WedderOne"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="WedderTwo" class="input-label">Wedder Two:</label>
+                        <input asp-for="WedderTwo" class="form-input" id="wedder-two" placeholder="Wedder Two">
+                        <span asp-validation-for="WedderTwo"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="Date" class="input-label">Date:</label>
+                        <input type="date" asp-for="Date" class="form-input" id="Date" placeholder="Date">
+                        <span asp-validation-for="Date"></span>
+                    </div>
+                    <div class="input-div">
+                        <label asp-for="WeddingAddress" class="input-label">Wedding Address:</label>
+                        <input asp-for="WeddingAddress" class="form-input" id="wedding-address" placeholder="Wedding Address">
+                        <span asp-validation-for="WeddingAddress"></span>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Create">
+                        <a href="dashboard" class="cancel">Cancel</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        @Html.ValidationSummary()
+    </div>
+
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>

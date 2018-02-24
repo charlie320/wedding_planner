@@ -1,0 +1,152 @@
+#container {
+    margin-left: 10px;
+}
+
+h1.title {
+    color: #717171;
+}
+
+h2.title {
+    color: #717171;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    max-width: 780px;
+    min-width: 300px;
+    border: 2px solid rgb(173, 173, 173);
+    margin: 10px 10px;
+    font-size: .85em;
+    font-family: serif;
+}
+
+th, td {
+    text-align: left;
+    padding: 5px 5px;
+    border-right: 2px solid rgb(173, 173, 173);
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table th {
+    background-color: rgb(99, 99, 99);
+    color: #fff;
+}
+
+#a-newwedding {
+    display: inline-block;
+    width: 80px;
+    height: auto;
+    font-family: sans-serif;
+    font-size: .75em;
+    text-decoration-line: none;
+    padding: 7px 10px;
+    margin: 15px 0 0 10px;
+    background-color: rgb(115, 177, 168);
+    border: 2px solid rgb(50, 94, 77);
+    color: rgb(255, 255, 255);
+    border-radius: 3px;  
+}
+
+#a-newwedding:hover {
+    background-color: rgb(167, 226, 216);
+    border: 2px solid rgb(134, 165, 158);
+    color: #aaa;
+}
+
+td.action-link {
+    text-align: center;
+}
+
+a#action-link-delete {
+    display: inline-block;
+    width: 45px;
+    height: auto;
+    font-family: sans-serif;
+    font-size: .75em;
+    text-decoration-line: none;
+    text-align: center;
+    padding: 3px 3px;
+    margin: auto;
+    background-color: #fdffae;
+    border: 2px solid rgb(122, 118, 76);
+    color: rgb(140, 121, 44);
+    border-radius: 3px;  
+}
+
+a#action-link-delete:hover {
+    background-color: rgb(162, 211, 204);
+    border: 2px solid rgb(66, 117, 98);
+    color: rgb(255, 255, 255);
+    border-radius: 3px; 
+}
+
+input[type="submit"]#action-link-submit {
+    display: inline-block;
+    width: 55px;
+    height: auto;
+    font-family: sans-serif;
+    font-size: .75em;
+    text-decoration-line: none;
+    text-align: center;
+    padding: 3px 3px;
+    margin: auto;
+    background-color: rgb(115, 177, 168);
+    border: 2px solid rgb(66, 117, 98);
+    color: rgb(255, 255, 255);
+    border-radius: 3px; 
+}
+
+input[type="submit"]#action-link-submit:hover {
+
+
+    background-color: rgb(223, 202, 226);
+    border: 2px solid rgb(139, 109, 144);
+    color: rgb(255, 255, 255);
+    border-radius: 3px; 
+}
+
+a#action-link-cancel {
+    display: inline-block;
+    width: 45px;
+    height: auto;
+    font-family: sans-serif;
+    font-size: .75em;
+    text-decoration-line: none;
+    text-align: center;
+    padding: 3px 3px;
+    margin: auto;
+    background-color: rgb(200, 158, 206);
+    border: 2px solid rgb(139, 109, 144);
+    color: rgb(255, 255, 255);
+    border-radius: 3px;  
+}
+
+a#action-link-cancel:hover {
+    background-color: #feffdb;
+    border: 2px solid rgb(80, 160, 153);
+    color: rgb(83, 156, 150);
+    border-radius: 3px;  
+}
+
+a#a-couple {
+    text-decoration-line: none;
+    color:#3d7d74;
+}
+
+a#a-couple:hover {
+    text-decoration-line: none;
+    color:#96bbb6;
+}
+
+#more-info {
+    margin-left: 15px;
+    font-size: .85em;
+}

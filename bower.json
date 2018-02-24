@@ -1,0 +1,19 @@
+{
+  "name": "WeddingPlanner",
+  "private": true,
+  "tools": {
+    "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final"
+  },
+  
+  "dependencies": {
+    "jquery": "2.2.0",
+    "jquery-validation": "1.14.0",
+    "jquery-validation-unobtrusive": "3.2.6",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.0-*",
+    "Microsoft.EntityFrameworkCore.Design": {
+        "version": "1.0.0-preview2-final",
+        "type": "build"
+    }
+  }
+}
